@@ -78,12 +78,13 @@ added (a fake one would be worse than none). If you want captions for
 accessibility, I'll need an `.vtt` file per video, or the spoken/on-screen
 text so I can produce one.
 
-## 8. Canonical domain / Open Graph URLs
-`<link rel="canonical">`, `og:url`, and the `og:image`/`twitter:image` paths
-currently point at `https://example.com/` and a relative image path as a
-placeholder (marked `<!-- TODO(seo) -->` in `<head>`). Once this site has a
-real domain, update those four values (and ideally switch the two image tags
-to absolute URLs) so link previews on social/chat apps resolve correctly.
+## 8. Canonical domain / Open Graph URLs — RESOLVED
+`<link rel="canonical">`, `og:url`, `og:image` and `twitter:image` now point
+at the live GitHub Pages URL
+(`https://mehmetcihangiryirgal.github.io/mehmet-cihangir-yirgal-portfolio/`)
+with the two image tags as full absolute URLs, so link previews on
+social/chat apps resolve correctly. If you later move the site to a custom
+domain, update all four values again to match.
 
 ## 9. Role title / date reconciliation (already partially resolved — please double-check)
 The source had three different transition dates floating around for the same

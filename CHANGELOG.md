@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## Post-launch fixes (round 3 — SEO)
+- `<link rel="canonical">`, `og:url`, `og:image` and `twitter:image` were
+  still pointing at the `example.com` placeholder from before the site had
+  a real address. Now that it's published, all four point at
+  `https://mehmetcihangiryirgal.github.io/mehmet-cihangir-yirgal-portfolio/`,
+  and the two image tags are absolute URLs (a relative path in `og:image`
+  resolves against the *crawler's* base, not the page's, so link previews
+  on LinkedIn/Slack/etc. would have broken).
+
 ## Post-launch fixes (round 2)
 - **Real bug: subnav links inside a case study (e.g. "3D Zirve '24" /
   "Woman to Women", or Diksiyon's "01 Customer and Content Operations" etc.)
