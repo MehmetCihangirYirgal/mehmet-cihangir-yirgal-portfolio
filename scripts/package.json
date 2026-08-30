@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-build-scripts",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local build tooling for this portfolio site (not shipped to the published pages).",
+  "scripts": {
+    "build:lang": "node build-lang-pages.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}

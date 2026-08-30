@@ -84,15 +84,18 @@
   .theme-toggle button.active{background:var(--surface); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,0.15);}
 
   .toggle-group{display:flex; background:var(--surface-2); border:1px solid var(--line); border-radius:9px; padding:2px;}
-  .toggle-group button{
+  .toggle-group button, .toggle-group a, .toggle-group span{
     flex:1; appearance:none; border:none; background:transparent; color:var(--muted); font:inherit; font-size:11.5px;
     font-weight:600; padding:6px 4px; border-radius:7px; cursor:pointer; white-space:nowrap;
+    text-decoration:none; display:flex; align-items:center; justify-content:center;
   }
-  .toggle-group button.active{background:var(--surface); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,0.15);}
+  /* the language switch is a real link to the other language's page, not a JS toggle —
+     the current language is a plain (non-interactive) label, the other is a link */
+  .toggle-group span{cursor:default;}
+  .toggle-group button.active, .toggle-group a.active, .toggle-group span.active{background:var(--surface); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,0.15);}
   .sidebar-footer .toggle-row{display:flex; gap:8px;}
   .sidebar-footer .toggle-row .toggle-group{flex:1;}
   .fx-note{font-size:10.5px; color:var(--muted); padding:0 8px;}
-  .i18n-hidden{display:none !important;}
 
   .mobile-bar{display:none;}
   .mobile-toggle-bar{display:none;}

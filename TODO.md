@@ -6,6 +6,13 @@ below was guessed or invented — each is marked in the HTML with an inline
 `<!-- TODO(...) -->` comment near the relevant spot, or as a `TODO(seo)` in
 `<head>`.
 
+**⚠️ Workflow change:** the site is now two generated pages (`index.html` for
+English, `tr/index.html` for Turkish), built from **`template.html`** by
+`scripts/build-lang-pages.js`. Edit `template.html`, then run
+`node scripts/build-lang-pages.js` (after `npm install` once inside
+`scripts/`) to regenerate both pages. Editing `index.html` or `tr/index.html`
+directly will work until the next rebuild, then get overwritten.
+
 ## 1. Contact links
 - **LinkedIn URL** — the source file had `href="#"` (a non-working placeholder).
   It now renders as plain, non-clickable text ("LinkedIn") in the sidebar and

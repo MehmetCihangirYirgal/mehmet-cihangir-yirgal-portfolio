@@ -1,5 +1,40 @@
 # CHANGELOG
 
+## Post-launch fixes (round 4 — EN/TR split into separate static pages)
+The site was one bilingual `index.html` with both languages' text always in
+the DOM and a JS class-toggle (`.i18n-hidden`) hiding whichever one wasn't
+active. That meant: every visitor downloaded both languages regardless of
+which one they'd see (real page-weight cost, not just a cosmetic one), crawlers
+and link-preview bots that don't execute JS (Bing, LinkedIn, Slack, WhatsApp)
+saw both languages as one block of mixed-language text, there was no
+per-language URL to share or add `hreflang` to, and the language switch
+couldn't be a plain link.
+
+Restructured to two fully separate static pages instead:
+- **`template.html`** is now the bilingual source (what `index.html` used to
+  be) — edit this, not the generated pages.
+- **`scripts/build-lang-pages.js`** (Node + cheerio) reads `template.html`
+  and generates `index.html` (English, at the site root) and `tr/index.html`
+  (Turkish) — each with *only* its own language physically present in the
+  DOM, nothing hidden via CSS. Run `node scripts/build-lang-pages.js` after
+  editing `template.html` (one-time `npm install` inside `scripts/` first).
+- Each generated page gets its own correct `<html lang>`, `canonical`,
+  `og:url`, localised `<title>`/description/OG/Twitter copy, and reciprocal
+  `<link rel="alternate" hreflang="en|tr|x-default">` tags pointing at both
+  URLs.
+- The Turkish page's `assets/...` references are rewritten to `../assets/...`
+  since it lives one directory down.
+- The language switch in the sidebar/mobile bar is now a real link to the
+  other language's page (`tr/` from English, `../` from Turkish) with the
+  current language shown as a plain, non-interactive label — not a
+  JavaScript toggle.
+- Removed the now-dead language-toggle logic from `assets/js/main.js`
+  (`applyLang`, `langButtons`, the `.i18n-hidden` class-flipping, and the
+  `applyLang('en')` call that would otherwise have force-set `lang="en"` on
+  the Turkish page too) and the matching `.i18n-hidden` rule from
+  `styles.css`. Theme and currency toggles are unaffected — those still
+  work identically via JS on both pages.
+
 ## Post-launch fixes (round 3 — SEO)
 - `<link rel="canonical">`, `og:url`, `og:image` and `twitter:image` were
   still pointing at the `example.com` placeholder from before the site had
