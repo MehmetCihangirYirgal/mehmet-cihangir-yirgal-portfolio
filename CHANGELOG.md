@@ -1,5 +1,57 @@
 # CHANGELOG
 
+## Diksiyon ve İletişim Akademi rewrite (round 10)
+Full editorial pass on the Diksiyon section (both `/` and `/tr/`), per Mehmet's
+detailed brief: shorter, HR-scannable, consistent positioning, accurate
+role/dates, no design changes. Design system, layout, media, pipelines,
+range-charts, currency conversion, anchors and JS were not touched — only
+prose, lists, tags and pullquotes in `template.html`.
+
+- **Role/date correction:** the site previously showed "Growth & Operations
+  Lead since May 2023," which was wrong. Corrected to the real line: Executive
+  Assistant Sep 2022 – May 2024, then **General Coordinator** (scope: Growth,
+  commercial operations and digital products) since **17 October 2024**. Per
+  instruction, the unexplained gap between May and October 2024 was left as
+  two plain dates rather than inventing a bridging explanation.
+- **~35% shorter.** Organisation Context went from 4 paragraphs + 3 sub-blocks
+  to 1 paragraph + 3 one-line sub-blocks (dropped repeated definitions of
+  "diction" and repeated mentions of the Academy/Yirmibirgün/Lernbee
+  relationship). Case 01's two 6–8 item lists (Responsibilities + Scope) were
+  merged into one 5-item list. Case 02's 11-item list became 5, its repeated
+  "not developed as an individual initiative" disclaimer became one
+  "Role and ownership" line. Case 03's 12-item list became 6. Case 04's
+  12-item list became 5, with "designed and implemented" reserved for the
+  actual technical build and "coordinated" for localisation/launch ops.
+- **Top-of-page positioning:** the four headline facts (15,000+ customers,
+  ~5x–6x ROAS at peak, webinar → evergreen VSL transition, four-language
+  multi-tenant platform) are now all in the section's opening paragraph,
+  without adding any new card or stat block.
+- **Metric-source tags professionalised.** Repeated "Self-reported"/"Kendi
+  beyanı" tags across the Diksiyon stats (ad spend, sales volume, revenue,
+  ROAS) were replaced with more specific sourcing — "Sales records,"
+  "Advertising platform data," "Internal company data" (and Turkish
+  equivalents) — depending on what the figure actually is. "Verified"/
+  "Doğrulanmış" was left untouched, since those are already backed by a
+  visible screenshot/document. No figures changed.
+- **Pullquotes rewritten as full sentences.** Several were sentence fragments
+  in both languages (e.g. "Kurumsal ölçekte, ücretli kullanıcı kazanımını ve
+  tıklamadan sonra ne olduğunu anlıyor," "The connective layer between
+  marketing, the website and commerce infrastructure, not just the ad
+  account") — rewritten as complete, first-person, outcome-stated sentences
+  in both EN and TR.
+- **Turkish copy tightened further** (beyond round 9's pass) wherever the
+  condensing touched a sentence — natural word order, no new calques
+  introduced.
+- **Note — not changed, needs your confirmation:** the brief asked me to
+  state that I personally designed and implemented a Next.js-based platform's
+  core engineering architecture for the VSL case. The site currently (and
+  accurately, per our earlier fact-checking rounds) says engineering stayed
+  with a separate development team on a WooCommerce/TutorLMS stack, and my
+  role was the commercial/technical connective layer, not the code itself.
+  I left this section as-is rather than overwrite a previously-verified fact
+  with a new, unverified one — flagged back to Mehmet to confirm which is
+  correct before any change is made here.
+
 ## Post-launch fixes (round 9)
 - **Data corrections from Mehmet, direct from his own records:**
   - Diksiyon Case 02's live-seminar range chart: "seminar registrations"
