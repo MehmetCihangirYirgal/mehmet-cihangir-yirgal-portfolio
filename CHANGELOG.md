@@ -1,5 +1,46 @@
 # CHANGELOG
 
+## Post-launch fixes (round 9)
+- **Data corrections from Mehmet, direct from his own records:**
+  - Diksiyon Case 02's live-seminar range chart: "seminar registrations"
+    and "course sales" were mislabelled as monthly figures — they're
+    actually weekly (seminars ran multiple times per week, so the
+    aggregate is per-week, not per-month). Relabelled both rows and their
+    Turkish equivalents "Haftalık seminer kaydı" / "Haftalık kurs satışı".
+  - The sale conversion rate row was showing 3.5%–9.4%; the real range is
+    8%–25%.
+  - The "Monthly ad spend" row was mislabelled as company-wide — it was
+    actually this funnel's own monthly budget (averaging ~₺500K/month),
+    not an organisation-wide total. Relabelled to "(this funnel)" /
+    "(bu huni)" and rewrote the note accordingly.
+- **Turkish copy: shifted case-study narration to first person where
+  Mehmet is the actor**, per his explicit request for a more natural
+  "yaptım/ettim" voice instead of the impersonal third-person register
+  used throughout (e.g. "yanıtladı" → "yanıtladım"). Converted all four
+  Diksiyon case studies' "Responsibilities" bullet lists, the Robomost
+  intro and "lead isn't handed off" line, and self-referential sentences
+  that named Mehmet in the third person (the VSL funnel concept, the
+  multi-tenant platform) — while carefully preserving the existing
+  attribution disclaimers about what was *not* solely his (e.g. "yalnızca
+  bana ait değildir" for the parts explicitly shared with management or a
+  team), so no credit is overclaimed. English text is unchanged; this is
+  a Turkish-register change only.
+- **Naturalness fix:** rewrote the Diksiyon Case 01 "Limitations"
+  paragraph, which read as a stiff two-clause calque, into three short,
+  natural Turkish sentences.
+- **New "process table" visual for pipeline/decision-loop diagrams.**
+  These horizontal step-chip rows (used across Diksiyon, Robomost) broke
+  visually when they wrapped to a second line — the connecting arrow
+  before the last step would get orphaned at the end of the previous
+  line, so a wrapped step looked disconnected from the sequence. Redesigned
+  `.pipeline` and `.decision-loop` in `styles.css` to give every step a
+  numbered badge (via CSS counters), so the sequence stays legible and
+  looks like a proper process diagram regardless of where it wraps.
+- Also removed several remaining unnatural semicolon-joined "short
+  subject; long list" sentences in the Turkish copy (a residual literal-
+  translation pattern from round 8's pass), replacing the semicolon with
+  a comma or splitting into separate sentences.
+
 ## Post-launch fixes (round 8)
 - **Accuracy fix on the Robomost commercial-outcome stats added in round 7:**
   Mehmet clarified that the "105" figure represents demo-to-enrolment

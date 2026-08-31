@@ -201,9 +201,10 @@
   .tag.self-reported{color:var(--ink-2); background:var(--surface-2); border-color:var(--line);}
   .tag.pending{color:var(--warn); background:var(--warn-bg); border-color:var(--warn-border);}
 
-  .pipeline{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:18px 0; font-size:13.5px;}
-  .pipeline .step{background:var(--surface-2); border:1px solid var(--line); border-radius:100px; padding:7px 13px; font-weight:600;}
-  .pipeline .arrow{color:var(--muted);}
+  .pipeline{display:flex; flex-wrap:wrap; align-items:center; gap:10px 4px; margin:18px 0; font-size:13px; counter-reset:pl-step;}
+  .pipeline .step{counter-increment:pl-step; display:inline-flex; align-items:center; gap:8px; background:var(--surface-2); border:1px solid var(--line); border-radius:9px; padding:7px 13px 7px 8px; font-weight:600;}
+  .pipeline .step::before{content:counter(pl-step); flex:none; width:17px; height:17px; border-radius:50%; background:var(--page); border:1px solid var(--line); color:var(--muted); font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center;}
+  .pipeline .arrow{color:var(--line); font-weight:400;}
 
   /* a single automation (Zap), drawn top-to-bottom, matching Zapier's own editor layout */
   .zapflow-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:16px 0;}
@@ -378,9 +379,10 @@
   .compare-col h5{margin:0 0 6px; font-size:13px; font-weight:700;}
   .compare-col p{margin:0; font-size:13px; color:var(--ink-2);}
 
-  .decision-loop{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:16px 0 6px; font-size:13.5px;}
-  .decision-loop .step{background:var(--surface-2); border:1px solid var(--line); border-radius:100px; padding:7px 13px; font-weight:600;}
-  .decision-loop .arrow{color:var(--muted);}
+  .decision-loop{display:flex; flex-wrap:wrap; align-items:center; gap:10px 4px; margin:16px 0 6px; font-size:13px; counter-reset:dl-step;}
+  .decision-loop .step{counter-increment:dl-step; display:inline-flex; align-items:center; gap:8px; background:var(--surface-2); border:1px solid var(--line); border-radius:9px; padding:7px 13px 7px 8px; font-weight:600;}
+  .decision-loop .step::before{content:counter(dl-step); flex:none; width:17px; height:17px; border-radius:50%; background:var(--page); border:1px solid var(--line); color:var(--muted); font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center;}
+  .decision-loop .arrow{color:var(--line); font-weight:400;}
   .decision-loop-note{font-size:12.5px; color:var(--muted); font-style:italic; margin:0 0 20px;}
 
   .range-chart{margin:14px 0 4px; display:flex; flex-direction:column; gap:16px;}
