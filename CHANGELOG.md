@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## Post-launch fixes (round 7)
+- Replaced the Robomost "No performance data published yet" placeholder with
+  real commercial-outcome figures, provided directly by Mehmet: a 9-month
+  active period, ₺223,311.10 total ad spend, 105 demo bookings (~₺1.7M
+  estimated additional revenue) and 64 Summer School enrolments (~₺500K
+  estimated additional revenue). Built as a `.stat-grid` of 6 stats, each
+  tagged `Self-reported`/`Kendi beyanı` (the 9-month window tagged as
+  `Context metric`/`Bağlamsal metrik` since it's a timeframe, not a claimed
+  result) — consistent with the evidence-taxonomy tags used elsewhere on the
+  site. The ad-spend figure uses the existing `.curr` component so it
+  converts correctly under the TRY/USD/GBP toggle. Verified in both
+  languages and in all three currencies.
+
 ## Post-launch fixes (round 6)
 - Wired up the real LinkedIn profile URL
   (`https://www.linkedin.com/in/cihangiryirgal/`) on the About page's
