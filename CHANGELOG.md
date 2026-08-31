@@ -1,5 +1,39 @@
 # CHANGELOG
 
+## Post-launch fixes (round 8)
+- **Accuracy fix on the Robomost commercial-outcome stats added in round 7:**
+  Mehmet clarified that the "105" figure represents demo-to-enrolment
+  *conversions*, not the total number of demo lessons delivered — at an
+  assumed ~10% conversion rate, the actual number of demos run is over
+  1,000. Corrected the stat grid (both languages) to show both figures
+  separately: `105` is now labelled "demo-to-enrolment conversions" /
+  "demo → kayıt dönüşümü", and a new `~1,000+` stat labelled "demo lessons
+  delivered (estimated)" / "gerçekleştirilen demo dersi (tahmini)" was
+  added, with an explicit note that the total is a derived estimate (from
+  an assumed conversion rate), not a directly recorded count — consistent
+  with the site's "don't imply false precision" rule.
+- **Full pass on the Turkish copy to remove literal-translation phrasing.**
+  Mehmet flagged that the Turkish version read as a word-for-word
+  translation rather than native Turkish, and asked for it to be optimised
+  for Turkish HR/recruiter readers. Reviewed all ~100 Turkish text blocks in
+  `template.html` end to end and rewrote roughly 30 of them: stiff,
+  English-calqued sentence structures (e.g. "Resmi unvan Yönetici Asistanı
+  **idi**" → "Yönetici Asistanı**'ydı**"), passive/impersonal constructions
+  that don't read naturally in Turkish, and the home/about intros were
+  shifted to a confident first-person voice ("çalıştım", "mezunuyum",
+  "başlıyorum") to match how Turkish portfolio bios are actually written —
+  while case-study prose kept its impersonal, evidentiary tone, since that
+  register is appropriate for an analytical case study in both languages.
+  Also unified inconsistent terminology sitewide: "vaka çalışması" →
+  "vaka analizi" (the nav and About page already used "analiz"; the
+  Diksiyon section headers used the other term), "partner kurum" → "iş
+  ortağı kurum", and fixed "robotik eğitimi işletmesi" → "robotik eğitim
+  işletmesi" (grammatically smoother compound). No facts, figures, dates,
+  names, or evidence tags were changed — only phrasing and terminology.
+  Also fixed a pre-existing stray closing `</span>` in the Diksiyon page's
+  Turkish role-meta line (harmless in browsers, but not present in the
+  English version).
+
 ## Post-launch fixes (round 7)
 - Replaced the Robomost "No performance data published yet" placeholder with
   real commercial-outcome figures, provided directly by Mehmet: a 9-month
