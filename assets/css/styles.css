@@ -190,6 +190,16 @@
   .pipeline .step{background:var(--surface-2); border:1px solid var(--line); border-radius:100px; padding:7px 13px; font-weight:600;}
   .pipeline .arrow{color:var(--muted);}
 
+  /* a single automation (Zap), drawn top-to-bottom, matching Zapier's own editor layout */
+  .zapflow-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:16px 0;}
+  @media (max-width:760px){.zapflow-grid{grid-template-columns:1fr;}}
+  .zapflow{border:1px solid var(--line); border-radius:12px; padding:14px; background:var(--surface);}
+  .zapflow-title{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); margin:0 0 10px;}
+  .zapflow-step{border:1px solid var(--line); border-radius:9px; padding:8px 11px; background:var(--surface-2);}
+  .zapflow-app{display:block; font-size:12.5px; font-weight:700;}
+  .zapflow-action{display:block; font-size:11.5px; color:var(--ink-2); margin-top:1px;}
+  .zapflow-arrow{text-align:center; color:var(--muted); font-size:13px; padding:3px 0; line-height:1;}
+
   .card{border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); padding:28px; margin:22px 0;}
   .card .eyebrow{font-size:12px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;}
   .card .brand-mark{height:26px; width:auto; display:block; margin-bottom:14px; object-fit:contain; object-position:left center;}
