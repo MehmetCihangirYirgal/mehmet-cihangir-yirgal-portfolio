@@ -14,12 +14,14 @@ English, `tr/index.html` for Turkish), built from **`template.html`** by
 directly will work until the next rebuild, then get overwritten.
 
 ## 1. Contact links
-- **LinkedIn URL** — the source file had `href="#"` (a non-working placeholder).
-  It now renders as plain, non-clickable text ("LinkedIn") in the sidebar and
-  on the About page's Contact section, instead of a dead link that looks like
-  it works. Send me the real profile URL and I'll wire it up.
-- **CV / PDF** — same situation. Send the file (or a hosted URL) and I'll link
-  it and add a "Download CV" button to the homepage hero, as requested.
+- **LinkedIn URL — RESOLVED.** Now links to
+  `https://www.linkedin.com/in/cihangiryirgal/` from the About page's Contact
+  section, in both languages.
+- **CV / PDF** — still outstanding. The source file had `href="#"` (a
+  non-working placeholder); it now renders as plain, non-clickable text
+  ("CV (PDF)") instead of a dead link that looks like it works. Send me the
+  file (or a hosted URL) and I'll link it and add a "Download CV" button to
+  the homepage hero, as requested.
 
 ## 2. Robomost — target age range conflict
 The English copy said "Parents of children aged 5–17"; the Turkish copy said

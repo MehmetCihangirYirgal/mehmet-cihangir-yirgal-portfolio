@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Post-launch fixes (round 6)
+- Wired up the real LinkedIn profile URL
+  (`https://www.linkedin.com/in/cihangiryirgal/`) on the About page's
+  Contact section, both languages. See TODO.md item 1 — CV/PDF is still the
+  only outstanding contact-link item.
+
 ## Post-launch fixes (round 5)
 - **Real bug: the subnav inside a case study (Diksiyon's "01/02/03/04...", ACC's
   "3D Zirve '24" / "Woman to Women") permanently covered the top of every
