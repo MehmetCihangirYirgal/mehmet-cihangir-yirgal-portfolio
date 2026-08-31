@@ -17,22 +17,24 @@ const COPY = {
   en: {
     htmlLang: 'en',
     title: 'Mehmet Cihangir Yırgal — Digital Marketing Portfolio',
-    description: 'Digital marketing portfolio of Mehmet Cihangir Yırgal: paid acquisition, funnel systems, and campaign reporting across four organisations, with verified and self-reported case studies.',
+    description: 'Digital marketing portfolio of Mehmet Cihangir Yırgal, covering paid acquisition, sales funnels, commercial operations and international digital product localisation.',
     url: SITE_BASE,
     assetPrefix: '',
     otherLangHref: 'tr/',
     otherLangLabel: 'TR',
     selfLangLabel: 'EN',
+    ariaLabels: null,
   },
   tr: {
     htmlLang: 'tr',
     title: 'Mehmet Cihangir Yırgal — Dijital Pazarlama Portföyü',
-    description: "Mehmet Cihangir Yırgal'ın dijital pazarlama portföyü: dört kurumda ücretli kullanıcı kazanımı, huni sistemleri ve kampanya raporlaması; doğrulanmış ve kendi beyanına dayalı vaka çalışmalarıyla.",
+    description: 'Reklam, satış hunileri, ticari operasyonlar ve uluslararası dijital ürün lokalizasyonunu kapsayan Mehmet Cihangir Yırgal dijital pazarlama portföyü.',
     url: SITE_BASE + 'tr/',
     assetPrefix: '../',
     otherLangHref: '../',
     otherLangLabel: 'EN',
     selfLangLabel: 'TR',
+    ariaLabels: { Theme: 'Tema', Language: 'Dil', Currency: 'Para Birimi' },
   },
 };
 
@@ -94,6 +96,14 @@ function buildPage(lang) {
     $el.append(`<span class="active" aria-current="true">${c.selfLangLabel}</span>`);
     $el.append(`<a href="${c.otherLangHref}">${c.otherLangLabel}</a>`);
   });
+
+  // 9. translate the (non-visible) aria-label attributes on the Turkish page so screen
+  //    readers announce them in Turkish; the elements/behaviour themselves are untouched
+  if (c.ariaLabels) {
+    Object.entries(c.ariaLabels).forEach(([enLabel, trLabel]) => {
+      $(`[aria-label="${enLabel}"]`).attr('aria-label', trLabel);
+    });
+  }
 
   // cheerio already preserves the original <!doctype html> from the parsed template
   return $.html();

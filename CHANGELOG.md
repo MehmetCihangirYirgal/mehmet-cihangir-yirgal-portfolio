@@ -1,5 +1,86 @@
 # CHANGELOG
 
+## Sitewide editorial pass (round 12)
+Full content pass across the whole site (Home, About, Diksiyon, Robomost, ACC
+Bilkent, Bionluk, meta tags, UI strings) per Mehmet's detailed brief, aimed at
+a shorter, evidence-based, UK-recruiter-ready portfolio built around one
+positioning: paid acquisition, sales funnels, customer communication, team
+operations and digital product infrastructure, connected into systems. No
+design, CSS, layout, media, JS behaviour, currency conversion, or anchors
+were touched — only `template.html` content and two small additions to
+`scripts/build-lang-pages.js` (meta description text, and translating three
+aria-label attributes on the Turkish build only).
+
+- **About page:** dropped "digital marketing generalist" and the
+  "not stuck to one channel" negative framing for a direct positioning
+  statement. Fixed the Education section's tense — the Liverpool
+  progression pathway hadn't started as of the write date, so English now
+  reads "Starting ... in September 2026" and Turkish uses future tense
+  ("başlayacağım") instead of a present-continuous "currently studying"-style
+  claim. Replaced the extended "policy vs. campaigns" metaphor with a short
+  transferable-skills list. Fixed the Experience list's Diksiyon entry to
+  match the corrected role/dates (General Coordinator since 17 Oct 2024,
+  Executive Assistant Sep 2022–May 2024) and converted the whole Turkish
+  list to first person throughout (it had been mixing 1st and 3rd person).
+  Regrouped Skills & Tools into more meaningful categories within the
+  existing 4-card grid, corrected the Python skill claim ("advanced" →
+  "for automation and scripting") and replaced the English CLB-style "C1"
+  claim with the actual IELTS Academic/UKVI 6.5 score. Confirmed there is no
+  CV file in the repository — the CV link stays a pending placeholder; a
+  real file or URL is still needed from Mehmet.
+- **Home page:** tightened the hero paragraph; replaced the 3-stat block's
+  content with the three metrics the brief asked to lead with (15,000+
+  customers, ~5x–6x ROAS, 4-language localisation), dropping the "750K+
+  Instagram (partner org)" stat from the homepage entirely (it stays,
+  correctly framed as organisational context, inside the Diksiyon case) so
+  it can't read as a personal growth result. Removed "Self-reported" here
+  too.
+- **Robomost:** replaced the "the way marketing works inside a UK SME" line
+  with a direct ownership statement. Renamed Zapier's "Untitled Step" /
+  "İsimsiz Adım" to a neutral, non-invented "AI Processing" / "Veri İşleme"
+  label. Split the Commercial Outcome stats by evidence type: the 105 figure
+  is now labelled "enrolments generated through the demo process" rather
+  than implying a conversion rate on its own; the ~1,000 estimated demo
+  count and the ₺1.7M/₺500K figures are labelled "Estimated value", not
+  "additional revenue" (which implied more causal certainty than the
+  underlying data supports); ad spend is tagged "Advertising platform
+  data"; actual enrolment counts are tagged "Sales records".
+- **ACC Bilkent:** switched the intro to first person ("ilerledim" instead
+  of "yükseldi"). Removed the now-resolved TODO asking whether the visual
+  assets were solo or team work, and added an explicit statement that every
+  visual shown in the case was personally designed and produced — alongside
+  a separate, honest line noting that the event's *overall* outcome is a
+  club/team result, not a personal one (these are different claims and both
+  needed to be true at once). Rewrote the Woman to Women closing per
+  Mehmet's exact wording, dropping the "not a single poster" defensive
+  framing.
+- **Bionluk:** reframed away from "the story is the skill progression" to
+  a delivery-focused case with two axes (content/creative delivery,
+  international B2B supplier research). Gave the Wepot project its own
+  bolded lead-in so it doesn't read as a buried aside. Simplified the
+  "Scale" line to the one verifiable fact (81 completed orders, Q4 2021)
+  plus a one-line floor-not-total caveat, dropping the harder-to-follow
+  explanation of how that number was derived.
+- **Sitewide:** removed "verified and self-reported case studies" language
+  from meta description / OG / Twitter tags (both in `template.html` and in
+  `build-lang-pages.js`, which had its own hardcoded copy that would have
+  silently overridden the template edit). Replaced remaining "Self-reported"
+  / "Kendi beyanı" tags across Home and Robomost with more specific sourcing
+  labels, matching the work already done to Diksiyon in round 10. Rewrote
+  every remaining sentence-fragment pullquote across all six sections as a
+  complete, first-person, outcome-stated sentence. Localised the visible
+  English UI strings that were previously hardcoded identically into both
+  language builds — "Skip to content", the Light/Dark/Auto theme buttons,
+  the currency fx-note, and the footer line — using the same lang-en/lang-tr
+  pattern as the rest of the site, plus Turkish aria-label text for
+  Theme/Language/Currency via the build script.
+- **Known remaining gap:** `assets/js/main.js` overwrites the fx-note with a
+  hardcoded English string ("Live rate · 1 USD ≈ …") once live exchange
+  rates load successfully, regardless of page language — this only shows
+  before that fetch resolves or if it fails. Fixing it needs a small
+  JavaScript change, which is outside this task's "don't touch JS" boundary;
+  flagging it rather than editing main.js without confirmation.
+
 ## Post-launch fix (round 11)
 - Mehmet confirmed the VSL case's engineering note: the original
   WooCommerce/TutorLMS checkout has since been replaced by a Next.js-based
