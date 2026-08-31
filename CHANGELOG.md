@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Post-launch fix (round 11)
+- Mehmet confirmed the VSL case's engineering note: the original
+  WooCommerce/TutorLMS checkout has since been replaced by a Next.js-based
+  platform — but, like the original stack, it was not personally coded by
+  him. Updated Case 03's Scope paragraph (both languages) to mention the
+  Next.js migration while keeping the accurate "not personally built"
+  framing and the existing "connective layer" role description intact.
+
 ## Diksiyon ve İletişim Akademi rewrite (round 10)
 Full editorial pass on the Diksiyon section (both `/` and `/tr/`), per Mehmet's
 detailed brief: shorter, HR-scannable, consistent positioning, accurate
