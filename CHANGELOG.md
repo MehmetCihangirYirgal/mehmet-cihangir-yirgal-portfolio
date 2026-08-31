@@ -1,5 +1,32 @@
 # CHANGELOG
 
+## Post-launch fixes (round 5)
+- **Real bug: the subnav inside a case study (Diksiyon's "01/02/03/04...", ACC's
+  "3D Zirve '24" / "Woman to Women") permanently covered the top of every
+  card as you scrolled.** `.subnav` was `position:sticky; top:16px`, but it
+  sits as a *sibling* of several thousand-pixel-tall `.card` elements inside
+  one large section — sticky only "un-sticks" once its whole containing
+  block scrolls past, and that container spans all the cards combined. So
+  once stuck, it never let go for the rest of the scroll, sitting on top of
+  whichever card's content happened to be near the top of the viewport.
+  Reproduced it directly (scrolled to the exact point, measured the subnav's
+  and the next card's `getBoundingClientRect()`, confirmed the overlap in
+  pixels), then removed `position:sticky` — it's a normal in-flow element
+  now, so it can no longer cover anything below it.
+- **Robomost gallery: images and videos no longer share a row.** With 2
+  landscape screenshots and 3 portrait videos in one 3-column grid, each
+  grid row stretched to the height of its tallest item, leaving large empty
+  gaps around the shorter images. Switched that gallery to 2 columns, which
+  naturally groups same-type media together (both screenshots in row 1,
+  videos afterwards) instead of interleaving them.
+- **Robomost hero banner + "Demo Registration"/"Summer School" images are
+  now real links to robomost.com** (`/`, `/demo-egitim/`, `/yazokulu/`
+  respectively), opening in a new tab. Added a hover/focus overlay
+  ("Click to visit the site ↗" / "Siteye gitmek için tıkla ↗") with a
+  subtle image zoom, respecting `prefers-reduced-motion`.
+- Added 3 more Robomost ad-creative videos (Demo variant 8, Summer School
+  variants 3 & 5), supplied directly.
+
 ## Post-launch fixes (round 4 — EN/TR split into separate static pages)
 The site was one bilingual `index.html` with both languages' text always in
 the DOM and a JS class-toggle (`.i18n-hidden`) hiding whichever one wasn't

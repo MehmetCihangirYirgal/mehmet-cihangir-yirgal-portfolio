@@ -131,11 +131,26 @@
   .org-tile p{margin:0; font-size:14px; color:var(--ink-2);}
 
   /* every gallery/hero frame renders media at its own natural aspect ratio — nothing is cropped */
-  .media{display:block; overflow:hidden; border-radius:11px; border:1px solid var(--line); background:var(--surface);}
+  .media{position:relative; display:block; overflow:hidden; border-radius:11px; border:1px solid var(--line); background:var(--surface);}
   .media img, .media video{display:block; width:100%; height:auto;}
   /* a <video>/<img> that carries the .media class itself (not wrapped in a div.media) needs the
      same sizing applied directly, since the rule above only matches media as a DESCENDANT of .media */
   video.media, img.media{width:100%; height:auto; display:block;}
+
+  /* an image that links out to a real page — a soft dark overlay + "visit the site" hint on hover/focus */
+  a.media-link{display:block;}
+  a.media-link .media img{transition:transform .35s ease;}
+  a.media-link:hover .media img, a.media-link:focus-visible .media img{transform:scale(1.035);}
+  .media-hint{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:14px;
+    background:rgba(10,10,10,0.58); color:#fff; font-size:13.5px; font-weight:600; letter-spacing:0.01em;
+    opacity:0; transition:opacity .2s ease;
+  }
+  a.media-link:hover .media-hint, a.media-link:focus-visible .media-hint{opacity:1;}
+  @media (prefers-reduced-motion: reduce){
+    a.media-link .media img{transition:none;}
+    a.media-link:hover .media img, a.media-link:focus-visible .media img{transform:none;}
+  }
 
   .headshot-slot{width:160px; height:160px; border-radius:100%; overflow:hidden; margin-top:24px;}
   .headshot-slot img{width:100%; height:100%; object-fit:cover; display:block;}
@@ -218,7 +233,10 @@
   .card.theme-instagram .pipeline .step{border-color:var(--ig-accent-border); background:var(--ig-accent-bg);}
   .card.theme-instagram .tag.pending{border-color:var(--ig-accent-border);}
 
-  .subnav{display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 28px; position:sticky; top:16px; z-index:10;}
+  /* not position:sticky: this one subnav sits above several thousand-pixel-tall case-study
+     cards, so a sticky nav here never un-sticks — it stays pinned for the whole scroll and
+     permanently covers the top of whichever card is currently in view */
+  .subnav{display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 28px;}
   .subnav a{
     font-size:13px; font-weight:600; text-decoration:none; color:var(--ink-2); white-space:nowrap;
     padding:9px 16px; border-radius:100px; background:var(--surface); border:1px solid var(--line);
