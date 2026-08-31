@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Post-launch fix (round 13)
+- Mehmet explained the August 2025 dip in the Yirmibirgün live-seminar
+  profitability chart (index 36, the lowest point that year): the Meta ad
+  account was restricted from running ads in Türkiye for about 20 days that
+  month. Added this as a short explanatory note in the chart's figcaption
+  (both languages), so the anomaly reads as an explained external event
+  rather than an unexplained performance drop.
+
 ## Sitewide editorial pass (round 12)
 Full content pass across the whole site (Home, About, Diksiyon, Robomost, ACC
 Bilkent, Bionluk, meta tags, UI strings) per Mehmet's detailed brief, aimed at
